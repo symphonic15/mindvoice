@@ -34,7 +34,7 @@ img {vertical-align: middle;}
   font-size: 20px;
 }
 
-/* SLIDER DE OPCIONES */
+/* IMAGE OPTIONS */
 
 .disabled-select {
   pointer-events:none !important;
@@ -90,4 +90,4 @@ img {vertical-align: middle;}
   }
 }
 
-/* FIN DE SLIDER DE OPCIONES */
+/* END IMAGE OPTIONS */

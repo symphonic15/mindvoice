@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>MindVoice - Alpha</title>
+  <title>MindVoice 1.0</title>
 </head>
 <body>
 

@@ -2,13 +2,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="css/smart-tv-keyboard-dark.min.css">
-  <link rel="stylesheet" href="css/default.css">
-  <script src="js/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/smart-tv-keyboard.min.css">
+  <link rel="stylesheet" href="css/keyboard.css">
+  <script src="js/jquery-3.3.1.slim.min.js"></script>
   <script src="js/responsivevoice.js"></script>
   <script src="layouts/spanish.js"></script>
   <script src="js/smartTvKeyboard.js"></script>
-  <title>MindVoice - Alpha</title>
+  <title>MindVoice 1.0</title>
 </head>
 <body>
 
@@ -39,7 +39,7 @@
 
       <!-- Getting categories -->
       <?php
-        $sql = "SELECT * FROM categorias";
+        $sql = "SELECT * FROM categories";
         $result = mysqli_query($conn, $sql);
 
         while($row = mysqli_fetch_assoc($result))
@@ -47,7 +47,7 @@
           echo'
             <div name="'.$row["id"].'" class="categories option">
               <div class="category-text">
-                <h1>'.strtoupper($row["nombre"]).'</h1>
+                <h1>'.strtoupper($row["name"]).'</h1>
               </div>
             </div>
           ';
@@ -57,14 +57,14 @@
 
       <!-- Getting words -->
       <?php
-        $sql = "SELECT * FROM palabras";
+        $sql = "SELECT * FROM words";
         $result = mysqli_query($conn, $sql);
 
         while($row = mysqli_fetch_assoc($result))
         {
           echo'
-            <div name="'.$row["nombre"].'" class="words option '.$row["categoria_id"].'">
-              <img src="images/'.$row["imagen"].'" style="height:100%; max-width: 100%">
+            <div name="'.$row["name"].'" class="words option '.$row["category_id"].'">
+              <img src="images/'.$row["image"].'" style="height:100%; max-width: 100%">
             </div>
           ';
         }
@@ -73,7 +73,7 @@
     </div>
   </div>
 
-  <script src="js/default.js"></script>
+  <script src="js/keyboard.js"></script>
   <script>
   function keyAction(event)
   {
@@ -99,8 +99,8 @@
 
     $('document').ready(function(){
 
-      $('.text-input').focus();
-      $('.text-input').select();
+      $('.textarea').focus();
+      $('.textarea').select();
 
       select();
     });

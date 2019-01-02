@@ -4,7 +4,7 @@
  * Date: 17-May-2015 11:16:22 PM
  */
 smartTvKeyboardLayouts = typeof smartTvKeyboardLayouts === 'undefined'? {} : smartTvKeyboardLayouts;
-smartTvKeyboardLayouts.en = {
+smartTvKeyboardLayouts.es = {
     unshift: [
     	[
             {text: '1', value: '1', length: 1, color: 'number'},
