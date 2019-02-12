@@ -2,7 +2,7 @@
 Aplicación desarrollada para ayudar a niños/as que sufren problemas a la hora de comunicarse con el entorno. Todo esto mediante el uso de imágenes, texto, asistencias de voz y herramientas de accesibilidad.
 
 # Funcionamiento básico
-La aplicación se desarrolló pensada para menores de 10 años, esto hace que uno de los focos principales a la hora de codificarlo sea conseguir la mayor facilidad y simpleza en su uso.
+La aplicación se desarrolló pensada para menores de 10 años, esto hace que uno de los focos principales a la hora de codificarlo sea conseguir la mayor facilidad y simplicidad en su uso.
 
 Principalmente consta de:
 
