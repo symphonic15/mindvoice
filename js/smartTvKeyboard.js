@@ -269,6 +269,9 @@ function setCursorPosition(pos) {
 					case KEYS.WORD:
 						document.getElementById('select').click();
 						break;
+					case KEYS.NEXT:
+						nextOption();
+						break;
 					case KEYS.SPEAK:
 						speak();
 						break;
