@@ -1,10 +1,12 @@
 <html>
 <head>
+  <title>Mind Voice</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
-  <title>Mind Voice</title>
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -23,13 +25,13 @@
   <div class="index-panel">
     <!-- Voice gender -->
     <div class="options">
-      <div id="male" class="option-left gender">
+      <div id="male" class="option-left gender option-background">
         <div class="gender-content" onclick="setGender(0)" style="text-align: right;">
           <h2>HOMBRE</h2>
           <img src="images/q.png" style="max-width: 100%; height: 60px; margin-left: 15px;">
         </div>
       </div><!--
-   --><div id="female" onclick="setGender(1)" class="option-right gender">
+   --><div id="female" onclick="setGender(1)" class="option-right gender option-background">
         <div class="gender-content" style="text-align: left;">
           <img src="images/e.png" style="max-width: 100%; height: 60px; margin-right: 15px;">
           <h2>MUJER</h2>
@@ -42,15 +44,15 @@
     <!-- Interface -->
     <div class="options">
       <a href="keyboard.php">
-        <div class="option-left">
-          <h1>TECLADO NORMAL</h1>
+        <div class="option-left option-background">
+          <h1>TECLADO COMPLETO</h1>
           <img src="images/keyboard.png" style="max-width: 100%">
           <hr class="option-separator">
           <img src="images/a.png" style="max-width: 100%; margin: 5px;">
         </div>
       </a>
       <a href="navkeys.php">
-        <div class="option-right">
+        <div class="option-right option-background">
           <h1>TECLADO ADAPTADO</h1>
           <img src="images/navkeys.png" style="max-width: 100%;">
           <hr class="option-separator">
@@ -136,11 +138,16 @@
     document.addEventListener("keydown", keyAction, false);
 
     window.onload = function() {
-      if(getCookie('gender') == 'Spanish Latin American Male') {
-        document.getElementById("male").className += " active";
+      if(getCookie('gender') == "") {
+        setCookie('gender', 'Spanish Latin American Male', 360);
       }
-      else if(getCookie('gender') == 'Spanish Latin American Female') {
-        document.getElementById("female").className += " active";
+      else {
+        if(getCookie('gender') == 'Spanish Latin American Male') {
+          document.getElementById("male").className += " active";
+        }
+        else if(getCookie('gender') == 'Spanish Latin American Female') {
+          document.getElementById("female").className += " active";
+        }
       }
     }
   </script>

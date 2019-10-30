@@ -1,0 +1,89 @@
+body {
+  margin: unset;
+  font-family: Verdana, sans-serif;
+  background-color: #004f00;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d5d5d5;
+  background: rgb(0,101,155);
+  background: linear-gradient(0deg, rgb(0, 101, 155) 0%, rgb(0, 103, 123) 50%, rgb(0, 116, 140) 100%);
+}
+.logo img {
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.guide-tip p {
+	margin: unset;
+	margin-bottom: 10px;
+	color: #f2f2f2;
+}
+
+/* Guide window */
+
+.guide {
+  position: absolute;
+  width: 500px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 3px solid #00659a;
+  background: rgb(0,101,155);
+  background: linear-gradient(0deg, rgb(208, 208, 208) 0%, rgb(213, 213, 213) 50%, rgb(255, 255, 255) 100%);
+}
+.guide-title {
+  margin: unset;
+  text-align: center;
+  color: #434343;
+}
+.guide-list {
+  list-style: none;
+  padding: unset;
+}
+.guide-list li {
+  margin: 5px;
+}
+.guide-key {
+  display: inline-block;
+  background-color: #00659a;
+  padding: 5px;
+  height: 20px;
+  width: 30px;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+}
+.guide-warning {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #00659a;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+
+/* General */
+
+.option-background {
+  background: rgb(0,77,117);
+  background: linear-gradient(0deg, rgb(0, 77, 117) 0%, rgb(0, 101, 121) 50%, rgb(0, 111, 134) 100%);
+}
+.option-background:hover {
+  background: rgb(0,79,120);
+  background: linear-gradient(0deg, rgba(0,79,120,1) 0%, rgba(0,118,143,1) 50%, rgba(0,119,143,1) 100%);
+}
+.option-background.active {
+  background: rgb(0,79,120);
+  background: linear-gradient(0deg, rgba(0,79,120,1) 0%, rgba(0,118,143,1) 50%, rgba(0,119,143,1) 100%);
+}

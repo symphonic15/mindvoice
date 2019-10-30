@@ -1,11 +1,13 @@
 <html>
 <head>
+  <title>Mind Voice</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/keyboard.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
   <script src="js/responsivevoice.js"></script>
-  <title>Mind Voice</title>
 </head>
 <body>
 
@@ -14,7 +16,7 @@
     $servername = "localhost"; //SQL Server
     $username = "root"; //Username
     $password = ""; //Password
-    $dbname = "mindvoice"; //DataBase name
+    $dbname = "mindvoice"; //Database name
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -54,7 +56,7 @@
         while($row = mysqli_fetch_assoc($result))
         {
           echo'
-            <div name="'.$row["id"].'" class="categories option">
+            <div name="'.$row["id"].'" class="categories option option-background">
               <img src="images/pictograms/'.$row["id"].'/category.png">
               <div class="category-text">
                 <h1>'.strtoupper($row["name"]).'</h1>
@@ -71,7 +73,7 @@
         while($row = mysqli_fetch_assoc($result))
         {
           echo'
-            <div name="'.utf8_encode($row["name"]).'" class="words option '.$row["category_id"].'">
+            <div name="'.utf8_encode($row["name"]).'" class="words option option-background '.$row["category_id"].'">
               <img src="images/pictograms/'.$row["category_id"].'/'.$row["image"].'" style="height:100%; max-width: 100%">
             </div>
           ';
@@ -89,6 +91,9 @@
       <li><div class="guide-key">F3</div> SELECCIONAR CATEGORÍA/IMAGEN</li>
       <li><div class="guide-key">F4</div> HABLAR</li>
     </ul>
+    <p class="guide-warning">
+      NOTA: SI NO ES CAPAZ DE OÍR LA VOZ, ASEGURESÉ DE HABER HABILITADO EL PERMISO DE REPRODUCCIÓN EN ESTA PÁGINA. PUEDE HACERLO PRESIONANDO EL ÍCONO SITUADO A LA IZQUIERDA DE LA DIRECCIÓN WEB, EN EL SECTOR SUPERIOR DEL NAVEGADOR.
+    </p>
   </div>
 
   <!-- Block page in mobile resolutions -->
