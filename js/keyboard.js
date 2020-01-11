@@ -4,6 +4,69 @@ var categorySelected = 0;
 var category = null;
 var word = null;
 
+function keyAction(event) {
+  var keycode = event.keyCode;
+  switch (keycode) {
+    case 112:
+      event.preventDefault();
+      toggleGuide();
+      return false;
+      break;
+    case 113:
+      event.preventDefault();
+      nextOption();
+      return false;
+      break;
+    case 114:
+      event.preventDefault();
+      document.getElementById("select").click();
+      return false;
+      break;
+    case 115:
+      event.preventDefault();
+      speak();
+      return false;
+      break;
+    case 27:
+      event.preventDefault();
+      window.history.back();
+      return false;
+      break;
+  }
+}
+
+function toggleGuide() {
+  if(document.getElementById("guide").style.display == 'none') {
+    document.getElementById("guide").style.display = 'block';
+  }
+  else {
+    document.getElementById("guide").style.display = 'none';
+  }
+}
+
+document.addEventListener("keydown", keyAction, false);
+
+window.onload = function() {
+  renderCategories(pictogram);
+  renderWords(pictogram);
+  select();
+  document.getElementById("textarea").select();
+}
+
+function renderCategories(pictogram) {
+  pictogram.forEach(function(category) {
+    document.getElementById("bottom-panel").insertAdjacentHTML('beforeend', '<div name="'+category.name+'" class="categories option option-background"><img src="images/pictograms/'+category.name+'/category.png"><div class="category-text"><h1>'+category.name+'</h1></div></div>');
+  });
+}
+
+function renderWords(pictogram) {
+  pictogram.forEach(function(category) {
+    category.words.forEach(function(word) {
+      document.getElementById("bottom-panel").insertAdjacentHTML('beforeend', '<div name="'+word.name+'" class="words option option-background '+category.name+'"><img src="images/pictograms/'+category.name+'/'+word.image+'" style="height:100%; max-width: 100%"></div>');
+    });
+  });
+}
+
 function showCategoriesSlides() {
   if(categorySelected == 0)
   {
@@ -55,8 +118,7 @@ function nextOption() {
   }
 }
 
-function select()
-{
+function select() {
   showCategoriesSlides();
 
   document.getElementById("select").onclick = function()
@@ -99,7 +161,6 @@ function getCookie(cname) {
 }
 
 function speak() {
-  console.log("asd");
   var text = document.getElementById("textarea").value;
   responsiveVoice.speak(text, getCookie('gender'));
   text=encodeURIComponent(text);

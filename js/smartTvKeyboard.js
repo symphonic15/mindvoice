@@ -141,13 +141,11 @@ function setCursorPosition(pos) {
 						var value = rowValue[colIndex];
 						var button = $(buttonTemplate);
 
-						if(value.color == 'success')
-						{
-							button.attr('onclick', 'speak();');
+						if(value.text == 'HABLAR') {
+							button.attr('onclick', 'speak()');
 						}
 
-						if(value.color == 'toggle')
-						{
+						if(value.text == 'PALABRA') {
 							button.attr('onclick', '$("#select").trigger("click")');
 						}
 
@@ -266,20 +264,8 @@ function setCursorPosition(pos) {
 					case KEYS.RIGHT:
 						move('RIGHT');
 						break;
-					case KEYS.WORD:
-						document.getElementById('select').click();
-						break;
-					case KEYS.NEXT:
-						nextOption();
-						break;
-					case KEYS.SPEAK:
-						speak();
-						break;
 					case KEYS.ENTER:
 						keyboardElement.find('.' + x + '-' + y).click();
-						break;
-					case KEYS.EXIT:
-						window.history.back();
 						break;
 				}
 			}

@@ -1,0 +1,74 @@
+<html>
+<head>
+  <title>Mind Voice</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="http://unjex.com/" target="_blank">
+        <img src="images/logo.png">
+      </a>
+    </div>
+    <div class="guide-tip">
+      <p>HAGA CLICK EN LA OPCIÓN QUE DESEE O PRESIONE LA LETRA CORRESPONDIENTE EN EL TECLADO</p>
+    </div>
+  </header>
+
+  <div class="index-panel">
+    <!-- Voice gender -->
+    <div class="options">
+      <div id="male" class="option-left gender option-background">
+        <div class="gender-content" onclick="setGender(0)" style="text-align: right;">
+          <h2>HOMBRE</h2>
+          <img src="images/q.png" style="max-width: 100%; height: 60px; margin-left: 15px;">
+        </div>
+      </div><!--
+   --><div id="female" onclick="setGender(1)" class="option-right gender option-background">
+        <div class="gender-content" style="text-align: left;">
+          <img src="images/e.png" style="max-width: 100%; height: 60px; margin-right: 15px;">
+          <h2>MUJER</h2>
+        </div>
+      </div>
+    </div>
+
+    <hr style="border: 0; height: 1px; background-color: #d5d5d5; width: 98%;">
+
+    <!-- Interface -->
+    <div class="options">
+      <a href="keyboard.html">
+        <div class="option-left option-background">
+          <h1>TECLADO COMPLETO</h1>
+          <img src="images/keyboard.png" style="max-width: 100%">
+          <hr class="option-separator">
+          <img src="images/a.png" style="max-width: 100%; margin: 5px;">
+        </div>
+      </a>
+      <a href="navkeys.html">
+        <div class="option-right option-background">
+          <h1>TECLADO ADAPTADO</h1>
+          <img src="images/navkeys.png" style="max-width: 100%;">
+          <hr class="option-separator">
+          <img src="images/d.png" style="max-width: 100%; margin: 5px;">
+        </div>
+      </a>
+    </div>
+  </div>
+  <!-- Block page in mobile resolutions -->
+  <div class="low-res" style="display: none">
+    <h1>
+      ESTA APLICACIÓN NO ES COMPATIBLE CON DISPOSITIVOS MOVILES
+    </h1>
+  </div>
+
+  <!-- JS Logic -->
+  <script src="js/index.js"></script>
+</body>
+</html>﻿

@@ -14,22 +14,6 @@
   <script src="js/smartTvKeyboard.js"></script>
 </head>
 <body>
-
-  <?php
-    // Database connection
-    $servername = "localhost"; //SQL Server
-    $username = "root"; //Username
-    $password = ""; //Password
-    $dbname = "mindvoice"; //Database name
-
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-    // Starting connection
-    if (!$conn) {
-       die("Error al conectar con la base de datos: " . mysqli_connect_error());
-    }
-  ?>
-
   <!-- Voice -->
   <audio src="" hidden class=speech></audio>
 
@@ -47,42 +31,11 @@
 
   <!-- Content structure -->
   <div class="panels">
-    <div class="left-panel">
+    <div id="left-panel" class="left-panel">
       <textarea type="text" name="text" class="input text-input" id="keyboard-modal-textarea"></textarea>
     </div>
-    <div class="right-panel">
+    <div id="right-panel" class="right-panel">
       <input type="button" id="select" style="display:none">
-      <!-- Getting categories -->
-      <?php
-        $sql = "SELECT * FROM categories";
-        $result = mysqli_query($conn, $sql);
-
-        while($row = mysqli_fetch_assoc($result))
-        {
-          echo'
-            <div name="'.$row["id"].'" class="categories option option-background">
-              <img src="images/pictograms/'.$row["id"].'/category.png">
-              <div class="category-text">
-                <h1>'.strtoupper($row["name"]).'</h1>
-              </div>
-            </div>
-          ';
-        }
-      ?>
-      <!-- Getting words -->
-      <?php
-        $sql = "SELECT * FROM words";
-        $result = mysqli_query($conn, $sql);
-
-        while($row = mysqli_fetch_assoc($result))
-        {
-          echo'
-            <div name="'.utf8_encode($row["name"]).'" class="words option option-background '.$row["category_id"].'">
-              <img src="images/pictograms/'.$row["category_id"].'/'.$row["image"].'" style="height:100%; max-width: 100%">
-            </div>
-          ';
-        }
-      ?>
     </div>
   </div>
 
@@ -112,23 +65,12 @@
     </h1>
   </div>
 
+  <!-- Pictogram words layout (name to be called: pictogram) -->
+  <script src="js/pictogram.js"></script>
+
   <!-- JS Logic -->
   <script src="js/navkeys.js"></script>
   <script>
-    function showGuide(event) {
-      var keycode = event.which || event.keyCode;
-      if(keycode == 72) {
-        if($('#guide').css('display') == 'none') {
-          $('#guide').show();
-        }
-        else {
-          $('#guide').hide();
-        }
-      }
-    }
-
-    document.addEventListener("keydown", showGuide, false);
-
     $('document').ready(function() {
       $('.text-input').smartTvKeyboard({
         layouts: {es: smartTvKeyboardLayouts.es},
@@ -139,16 +81,16 @@
   				UP: 87,
   				RIGHT: 68,
   				DOWN: 83,
-  				ENTER: 69, // Select button
-  				WORD: 70, // Select category/word
-          NEXT: 82, // Next category/word
-  				SPEAK: 81, // Speak
-  				EXIT: 27 // Close app
+  				ENTER: 69
   			}
       });
 
       $('.text-input').focus();
       $('.text-input').select();
+
+      renderCategories(pictogram);
+      renderWords(pictogram);
+
       select();
     });
   </script>

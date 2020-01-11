@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>Mind Voice</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/keyboard.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap" rel="stylesheet">
+  <script src="js/responsivevoice.js"></script>
+</head>
+<body>
+  <!-- Voice -->
+  <audio src="" hidden class=speech></audio>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="http://unjex.com/" target="_blank">
+        <img src="images/logo.png">
+      </a>
+    </div>
+    <div class="guide-tip">
+      <p>PRESIONE "F1" PARA ABRIR LA GUÍA</p>
+    </div>
+  </header>
+
+  <!-- Content structure -->
+  <div class="panels">
+    <div id="top-panel" class="top-panel">
+      <textarea type="text" id="textarea" name="text" class="textarea"></textarea>
+    </div>
+    <div id="bottom-panel" class="bottom-panel">
+      <input type="button" id="select" style="display:none">
+    </div>
+  </div>
+
+  <!-- Guide modal -->
+  <div id="guide" class="guide" style="display: none">
+    <h1 class="guide-title">GUÍA DE CONTROLES</h1>
+    <ul class="guide-list">
+      <li><div class="guide-key">F1</div> ABRIR/CERRAR GUÍA</li>
+      <li><div class="guide-key">F2</div> SIGUIENTE CATEGORÍA/IMAGEN</li>
+      <li><div class="guide-key">F3</div> SELECCIONAR CATEGORÍA/IMAGEN</li>
+      <li><div class="guide-key">F4</div> HABLAR</li>
+    </ul>
+    <p class="guide-warning">
+      NOTA: SI NO ES CAPAZ DE OÍR LA VOZ, ASEGURESÉ DE HABER HABILITADO EL PERMISO DE REPRODUCCIÓN EN ESTA PÁGINA. PUEDE HACERLO PRESIONANDO EL ÍCONO SITUADO A LA IZQUIERDA DE LA DIRECCIÓN WEB, EN EL SECTOR SUPERIOR DEL NAVEGADOR.
+    </p>
+  </div>
+
+  <!-- Block page in mobile resolutions -->
+  <div class="low-res" style="display: none">
+    <h1>
+      ESTA APLICACIÓN NO ES COMPATIBLE CON DISPOSITIVOS MOVILES
+    </h1>
+  </div>
+
+  <!-- Pictogram words layout (name to be called: pictogram) -->
+  <script src="js/pictogram.js"></script>
+
+  <!-- JS Logic -->
+  <script src="js/keyboard.js"></script>
+</body>
+</html>﻿

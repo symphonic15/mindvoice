@@ -49,7 +49,7 @@ smartTvKeyboardLayouts.es = {
             {text: 'Ñ', value: 'Ñ', length: 1, color: 'letter'},
             {text: '+', value: '+', length: 1, color: 'letter'},
             {text: '-', value: '-', length: 1, color: 'letter'},
-            {text: 'PALABRA', value: '&&switchMode', length: 3, color: 'toggle'}
+            {text: 'PALABRA', value: null, length: 3, color: 'toggle'}
         ],
         [
             {text: 'Z', value: 'Z', length: 1, color: 'letter'},
